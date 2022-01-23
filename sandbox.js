@@ -136,3 +136,16 @@ arr.forEach( function (numCopy) {
 } );
 
 // console.log(nArray);
+
+//Exercicio (foods) utilizando map
+const foods = ['Pizza', 'Sandwiches', 'ice cream'];
+
+// ES5
+// const capsFoods = foods.map( function (food) {
+//     return food.toUpperCase();
+// } );
+
+// ES6
+const capsFoods = foods.map ( food => food.toUpperCase() );
+
+console.log(capsFoods);
