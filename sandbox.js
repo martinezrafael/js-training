@@ -163,85 +163,140 @@ const cities = [
   "paris",
 ];
 
-const letters = cities.map ( citie => citie.slice(0, 1));
+const letters = cities.map((citie) => citie.slice(0, 1));
 
 // console.log(letters);
 
 //Exercicio (avaliação estudantes) - usando map
 
 const students = [
-    {
-      name: 'Tony Parker',
-      firstProject: 80,
-      secondProject: 75,
-      finalExam: 90
-    },
-    {
-      name: 'Marc Barchini',
-      firstProject: 84,
-      secondProject: 65,
-      finalExam: 65
-    },
-    {
-      name: 'Claudia Lopez',
-      firstProject: 45,
-      secondProject: 95,
-      finalExam: 99
-    },
-    {
-      name: 'Alvaro Briattore',
-      firstProject: 82,
-      secondProject: 92,
-      finalExam: 70
-    },
-    {
-      name: 'Isabel Ortega',
-      firstProject: 90,
-      secondProject: 32,
-      finalExam: 85
-    },
-    {
-      name: 'Francisco Martinez',
-      firstProject: 90,
-      secondProject: 55,
-      finalExam: 78
-    },
-    {
-      name: 'Jorge Carrillo',
-      firstProject: 83,
-      secondProject: 77,
-      finalExam: 90
-    },
-    {
-      name: 'Miguel López',
-      firstProject: 80,
-      secondProject: 75,
-      finalExam: 75
-    },
-    {
-      name: 'Carolina Perez',
-      firstProject: 85,
-      secondProject: 72,
-      finalExam: 67
-    },
-    {
-      name: 'Ruben Pardo',
-      firstProject: 89,
-      secondProject: 72,
-      finalExam: 65
-    }
-  ];
-  
+  {
+    name: "Tony Parker",
+    firstProject: 80,
+    secondProject: 75,
+    finalExam: 90,
+  },
+  {
+    name: "Marc Barchini",
+    firstProject: 84,
+    secondProject: 65,
+    finalExam: 65,
+  },
+  {
+    name: "Claudia Lopez",
+    firstProject: 45,
+    secondProject: 95,
+    finalExam: 99,
+  },
+  {
+    name: "Alvaro Briattore",
+    firstProject: 82,
+    secondProject: 92,
+    finalExam: 70,
+  },
+  {
+    name: "Isabel Ortega",
+    firstProject: 90,
+    secondProject: 32,
+    finalExam: 85,
+  },
+  {
+    name: "Francisco Martinez",
+    firstProject: 90,
+    secondProject: 55,
+    finalExam: 78,
+  },
+  {
+    name: "Jorge Carrillo",
+    firstProject: 83,
+    secondProject: 77,
+    finalExam: 90,
+  },
+  {
+    name: "Miguel López",
+    firstProject: 80,
+    secondProject: 75,
+    finalExam: 75,
+  },
+  {
+    name: "Carolina Perez",
+    firstProject: 85,
+    secondProject: 72,
+    finalExam: 67,
+  },
+  {
+    name: "Ruben Pardo",
+    firstProject: 89,
+    secondProject: 72,
+    finalExam: 65,
+  },
+];
 
-const finalGrades = students.map (theStudent => {
+const finalGrades = students.map((theStudent) => {
+  const projectsAvg = (theStudent.firstProject + theStudent.secondProject) / 2;
+  const finalGrade = theStudent.finalExam * 0.6 + projectsAvg * 0.4;
 
-    const projectsAvg = (theStudent.firstProject + theStudent.secondProject) / 2;
-    const finalGrade = theStudent.finalExam * 0.6 + projectsAvg * 0.4;
-
-    return {
-        name: theStudent.name,
-        finalGrade: Math.round(finalGrade)
-    }
+  return {
+    name: theStudent.name,
+    finalGrade: Math.round(finalGrade),
+  };
 });
 
 // console.log(finalGrades);
+
+//Exemplo de soma usando reduce
+
+const numeros = [2, 4, 6, 8];
+
+// const total = numeros.reduce(function (accumulator, currentValue) {
+//     console.log(`accumulator is ${accumulator} and current value is ${currentValue}.`);
+//     return accumulator + currentValue;
+// });
+
+// console.log(`Total is ${total}`);
+
+//Exemplo de soma com reduce, usando um initial value
+
+// const newTotal = numeros.reduce((acc, current) => {
+//     console.log(`accumulator is ${acc} and current value is ${current}.`);
+//     return acc + current;
+// },23);
+
+// console.log(newTotal);
+
+//Exemplo (product) usando reduce
+
+const arrNumbers = [2, 4, 6, 8];
+
+const multiply = arrNumbers.reduce((acc, current) => acc * current);
+
+// console.log(multiply);
+
+//concat
+
+const words = ["This", "is", "one", "big", "string"];
+
+//ES5
+// const bigString = words.reduce(function (sum, word) {
+//     return sum + word;
+// });
+
+// ES6
+const bigString = words.reduce((sum, word) => sum + word);
+
+// console.log(bigString);
+
+//usando reduce em objetos
+const peopleAges = [
+  { name: "Candice", age: 25 },
+  { name: "Tammy", age: 30 },
+  { name: "Allen", age: 49 },
+  { name: "Nettie", age: 21 },
+  { name: "Stuart", age: 17 },
+];
+
+const ages = peopleAges.reduce(function(initial, person) {
+    return initial + person.age;
+}, 0);
+
+// console.log(ages);
