@@ -100,3 +100,16 @@ const ofPool = places.filter ( place => {
 });
 
 // console.log(ofPool);
+
+//Exercício filter (odd numbers) - Filtrar os números impares que são maiores de 42
+
+const numbers = [1, 60, 112, 123, 100, 99, 73, 45];
+
+const result = numbers.filter (number => {
+    if (number % 2 !== 0 && number > 42) {
+        return number;
+    }
+})
+
+// console.log(result);
+
