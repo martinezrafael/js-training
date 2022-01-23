@@ -126,3 +126,13 @@ const newArray = arr.map( number => number * 2);
 
 // console.log(newArray);
 
+//solução semelhante usando forEach
+
+const nArray = [];
+
+arr.forEach( function (numCopy) {
+    numCopy *= 2;
+    nArray.push(numCopy);
+} );
+
+// console.log(nArray);
