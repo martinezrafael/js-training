@@ -113,3 +113,16 @@ const result = numbers.filter (number => {
 
 // console.log(result);
 
+
+const arr = [1, 2, 3];
+
+//ES5
+// const newArray = arr.map(function (number) {
+//     return number * 2;
+// });
+
+//ES6
+const newArray = arr.map( number => number * 2);
+
+// console.log(newArray);
+
